@@ -23,10 +23,10 @@ public class playerController : MonoBehaviour { //The Monobehaviour is used to t
 	
 	void Update () //void Update is called once per frame when the game is running.
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))//This is used to start an if
+        if (grounded && Input.GetKeyDown(KeyCode.Space))                      //This is used to start an if statment that will function when the player is grounded and they press the spacebar key
         {
-            anim.SetBool("Grounded", false);
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+            anim.SetBool("Grounded", false);                                  //This sets the Boolean grounded when false to add the components below.
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));  //This is used to get the component from the Rigidbody (which is a component that is placed on an object to put its motion under the control of the unity engine) and to add a new force to it which is set as 0 and uses the jumpForce previously seen above.
         }
      }
 
@@ -50,7 +50,7 @@ public class playerController : MonoBehaviour { //The Monobehaviour is used to t
             Flip();
       }
 
-    void Flip()
+    void Flip()					   //void Flip is called when the filp component is used, per frame of the game.
      {
         facingRight = !facingRight;                //
         Vector3 theScale = transform.localScale;   //
