@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Collections;           //The using__ imports a namespace, these are a collection of classes and other data types that are used to categorize the library. The System.Collections is all the classes in the .net related to holding groups of data.
+using System.Collections.Generic;   //The using__ imports a namespace, these are a collection of classes and other data types that are used to categorize the library. The ystem.Collections.Generic is used to hold a different class of object that are not directly identified in original library.
+using UnityEngine;                  //The using__ imports a namespace, these are a collection of classes and other data types that are used to categorize the library. UnityEngine in this case is a collection of all the classes related to unity.
 
-public class playerController : MonoBehaviour {
-
+public class playerController : MonoBehaviour { //The Monobehaviour is used to tell Unity what class your class is derived from.
+ 
     public float topSpeed = 10f;    //This is used as a variable to determine the speed the player move at.
-    bool facingRight = true;        //This is a Boolean that will act as a trigger to understand if the player is facing right, which is recognized as true if they go right.
-    Animator anim;                  //This is used to control the animation system that will be in use.
+    bool facingRight = true;        //This Boolean will act as a trigger to understand if the player is facing right, which is recognized as true, if they go right and false if they are facing left.
+    Animator anim;                  //This is used to assign animation clips to animation components and control the playback based on variables and parameters.
 
-    bool grounded = false;
-    public Transform groundCheck;
-    float groundRadius = 0.2f;
-    public LayerMask whatIsGround;
-    public float jumpForce = 250f;
+    bool grounded = false;	    //
+    public Transform groundCheck;   //
+    float groundRadius = 0.2f;      //
+    public LayerMask whatIsGround;  //
+    public float jumpForce = 250f;  //This float is a variable that determines the force that the player character jumps at, this is set to 250.
 
     // Use this for initialization
     void Start ()
