@@ -8,22 +8,22 @@ public class playerController : MonoBehaviour { //The Monobehaviour is used to t
     bool facingRight = true;        //This Boolean will act as a trigger to understand if the player is facing right, which is recognized as true, if they go right and false if they are facing left.
     Animator anim;                  //This is used to assign animation clips to animation components and control the playback based on variables and parameters.
 
-    bool grounded = false;	    //
+    bool grounded = false;	    //This Boolean will detect if the user is on the ground or in the air, the false is used to state they are in the air and the true to state they are grounded.
     public Transform groundCheck;   //
-    float groundRadius = 0.2f;      //
+    float groundRadius = 0.2f;      //This float is used to determine when the system is and to recognize that the player is on the ground. Increasing the size of collision box will allow it recognize the floor quicker and decreasing the size of the collision box will increase the time it takes to reach the floor.
     public LayerMask whatIsGround;  //
     public float jumpForce = 250f;  //This float is a variable that determines the force that the player character jumps at, this is set to 250.
 
-    // Use this for initialization
-    void Start ()
+    void Start () //This is used for initialization of the script below.
+	    
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();  //This will tell the system to get components from the animator when an anim file is called and required.
 	}
 	
-	// Update is called once per frame
-	void Update ()
+	
+	void Update () //void Update is called once per frame when the game is running.
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if (grounded && Input.GetKeyDown(KeyCode.Space))//This is used to start an if
         {
             anim.SetBool("Grounded", false);
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
@@ -52,9 +52,9 @@ public class playerController : MonoBehaviour { //The Monobehaviour is used to t
 
     void Flip()
      {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-       transform.localScale = theScale;
+        facingRight = !facingRight;                //
+        Vector3 theScale = transform.localScale;   //
+        theScale.x *= -1;			   //
+       transform.localScale = theScale;     	   //
     }
 }
